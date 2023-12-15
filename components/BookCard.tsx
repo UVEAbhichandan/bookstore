@@ -5,7 +5,8 @@ import { useDispatch } from 'react-redux';
 import { SET_SELECTED_BOOK } from '../redux/actionTypes';
 
 interface BookCardProps {
-  book: any; // Replace 'any' with the actual type of your book data
+  book: any;
+  handleSetCart: Function;
 }
 
 const BookCard: React.FC<BookCardProps> = ({ book, handleSetCart }: any) => {
@@ -36,10 +37,10 @@ const BookCard: React.FC<BookCardProps> = ({ book, handleSetCart }: any) => {
         <p className='truncate'>Published Date: {book.volumeInfo.publishedDate}</p>
 
         </div>
+        </Link>
       {/* Add 'Add to Cart' button and other details */}
       {handleSetCart &&
         <button onClick={()=>handleSetCart(book)}>Add to Cart</button>}
-        </Link>
     </div>
   );
 };

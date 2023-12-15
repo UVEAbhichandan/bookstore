@@ -21,7 +21,6 @@ const BookList: React.FC<BookListProps> = (props: any) => {
         payload: newCart
       })
     }
-    console.log(props)
     return (
     <div>
       <div className="flex flex-wrap p-3 justify-center">
